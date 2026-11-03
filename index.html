@@ -2,435 +2,515 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gaurav Mehta · Data Science &amp; AI</title>
-<meta name="description" content="Gaurav Mehta: data scientist working on LLM evaluation, AI security and data pipelines. MS Data Science, NC State. Available now in the NYC area.">
-<meta property="og:title" content="Gaurav Mehta · Data Science & AI">
-<meta property="og:description" content="LLM evaluation, AI security research, ML and data engineering projects.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gaurav Mehta · Data Scientist</title>
+<meta name="description" content="Gaurav Mehta is a data scientist working on LLM evaluation, AI security and machine learning. MS Data Science, NC State. Available now in the NYC area.">
+<meta property="og:title" content="Gaurav Mehta · Data Scientist">
+<meta property="og:description" content="LLM evaluation, AI red-teaming and machine learning, with the data, methods and limits shown for each result.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://gmehta604.github.io/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314161a'/><text x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%235cc9a7'>G</text></svg>">
+<meta property="og:url" content="https://gauravnmehta3223.github.io/">
+<link rel="canonical" href="https://gauravnmehta3223.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23141a2e'/><rect x='6' y='18' width='5' height='8' fill='%23414487'/><rect x='13.5' y='12' width='5' height='14' fill='%2322a884'/><rect x='21' y='6' width='5' height='20' fill='%23fde725'/></svg>">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Gaurav Mehta","jobTitle":"Data Scientist","url":"https://gauravnmehta3223.github.io/","alumniOf":["North Carolina State University","K.J. Somaiya College of Engineering"],"sameAs":["https://github.com/gauravnmehta3223","https://www.linkedin.com/in/gauravmehta3223/"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+/* Layout concept: a model evaluation report. Figures carry the argument, each project reads like a model card, and every number says where it came from. */
 :root{
-  --bg:#f6f4ef; --surface:#fff; --surface-2:#fbfaf7; --ink:#17191d; --muted:#5b616d; --faint:#8a909b;
-  --line:#e2ded4; --accent:#17705a; --accent-2:#c2571a; --accent-soft:#e2f0eb; --chip:#efebe3;
-  --shadow:0 1px 2px rgba(20,20,20,.04),0 8px 24px -12px rgba(20,20,20,.12);
+  --bg:#f5f6fa; --surface:#ffffff; --ink:#141a2e; --muted:#50586f; --faint:#6f768c; --line:#d8dce7; --cell:#e9ebf2;
+  --accent:#3f3a8f; --accent-2:#14776f; --warn:#a2461a;
+  --v1:#440154; --v2:#414487; --v3:#2a788e; --v4:#22a884; --v5:#7ad151; --v6:#bbdf27;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
 }
-:root[data-theme="dark"]{
-  --bg:#0f1114; --surface:#171a1f; --surface-2:#13161a; --ink:#ebe8e2; --muted:#a0a6b1; --faint:#737a86;
-  --line:#272c34; --accent:#5cc9a7; --accent-2:#f0915a; --accent-soft:#18302a; --chip:#1f232a;
-  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6);
-}
-@media (prefers-color-scheme: dark){
+@media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#0f1114; --surface:#171a1f; --surface-2:#13161a; --ink:#ebe8e2; --muted:#a0a6b1; --faint:#737a86;
-    --line:#272c34; --accent:#5cc9a7; --accent-2:#f0915a; --accent-soft:#18302a; --chip:#1f232a;
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6);
+    --bg:#10111d; --surface:#191a2b; --ink:#eef0f7; --muted:#adb3c8; --faint:#8b91a8; --line:#2f3149; --cell:#222439;
+    --accent:#a9a4f5; --accent-2:#4fd1b4; --warn:#f0a070;
+    --v1:#6a4bc4; --v2:#3f6fb5; --v3:#2a93a3; --v4:#25b58c; --v5:#6fd05a; --v6:#fde725;
+    color-scheme:dark;
   }
 }
+:root[data-theme="dark"]{
+  --bg:#10111d; --surface:#191a2b; --ink:#eef0f7; --muted:#adb3c8; --faint:#8b91a8; --line:#2f3149; --cell:#222439;
+  --accent:#a9a4f5; --accent-2:#4fd1b4; --warn:#f0a070;
+  --v1:#6a4bc4; --v2:#3f6fb5; --v3:#2a93a3; --v4:#25b58c; --v5:#6fd05a; --v6:#fde725;
+  color-scheme:dark;
+}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-::selection{background:var(--accent);color:var(--bg)}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
-.serif{font-family:Fraunces,Georgia,serif}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:700;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1120px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.label{font:500 .75rem/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.skip{position:absolute;left:-999px;top:8px;background:var(--surface);padding:8px 12px;z-index:20}
+.skip:focus{left:12px}
 
-/* nav */
-nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600}
-.brand i{width:30px;height:30px;border-radius:8px;background:var(--ink);color:var(--accent);display:grid;place-items:center;font:700 17px Fraunces,serif;font-style:normal}
-nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
-nav ul a{display:block;padding:6px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-size:14px}
-nav ul a:hover{color:var(--ink);background:var(--chip)}
-.theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:34px;height:34px;border-radius:9px;cursor:pointer;display:grid;place-items:center}
+/* header */
+.scale{height:4px;background:linear-gradient(90deg,#440154,#3b528b,#21918c,#5ec962,#fde725)}
+.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:58px}
+.brand{font:700 1.06rem var(--display);color:var(--ink);text-decoration:none;white-space:nowrap}
+.top nav{display:flex;align-items:center;gap:clamp(10px,2vw,22px);font-size:.92rem}
+.top nav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+.top nav a:hover{color:var(--ink);text-decoration:underline}
+.theme{appearance:none;background:none;border:1px solid var(--line);border-radius:6px;color:var(--ink);width:34px;height:34px;display:grid;place-items:center;cursor:pointer}
 .theme svg{width:16px;height:16px}
-@media (max-width:720px){nav ul .opt{display:none}}
-@media (max-width:480px){nav ul .opt2{display:none} nav ul a{padding:6px 8px} .brand span{display:none}}
+@media (max-width:640px){.top nav a.opt{display:none}}
+@media (max-width:400px){.top nav a.opt2{display:none}}
 
 /* hero */
-.hero{padding:84px 0 40px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center}
-@media (max-width:860px){.hero{grid-template-columns:1fr;padding-top:56px;gap:32px}}
-.pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:999px;font-weight:500}
-.pill b{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 2.4s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
-h1{font:700 clamp(40px,6.4vw,66px)/1.03 Fraunces,serif;letter-spacing:-.015em;margin:20px 0 18px}
-h1 em{font-style:italic;color:var(--accent)}
-.lede{font-size:clamp(17px,2vw,19px);color:var(--muted);margin:0;max-width:580px}
-.lede strong{color:var(--ink);font-weight:600}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1px solid var(--line);text-decoration:none;font-weight:500;font-size:15px;background:var(--surface);transition:transform .15s,border-color .15s}
-.btn:hover{transform:translateY(-1px);border-color:var(--faint)}
-.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.btn svg{width:16px;height:16px;flex:none}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:clamp(32px,5vw,64px);align-items:start;padding-block:clamp(40px,6vw,72px) clamp(40px,5vw,56px)}
+.hero>*{min-width:0}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:.92rem;color:var(--accent-2);font-weight:500}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.kicker{font-size:1.06rem;font-weight:500;margin-top:20px}
+h1{font-size:clamp(2.5rem,5.4vw,4.1rem);line-height:1.02;letter-spacing:-.02em;margin-top:8px}
+.lede{font-size:1.1rem;color:var(--muted);margin-top:20px;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border:1px solid var(--line);border-radius:6px;color:var(--ink);background:var(--surface);font-weight:500;text-decoration:none}
+.btn:hover{border-color:var(--ink)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 
-/* terminal card */
-.term{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;font:13.5px/1.75 "JetBrains Mono",monospace}
-.term .bar{display:flex;gap:6px;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--surface-2)}
-.term .bar span{width:10px;height:10px;border-radius:50%;background:var(--line)}
-.term pre{margin:0;padding:18px 20px;white-space:pre-wrap;color:var(--muted)}
-.term .k{color:var(--accent)} .term .s{color:var(--accent-2)} .term .c{color:var(--faint)} .term .v{color:var(--ink)}
-
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;background:var(--surface);margin:24px 0 8px;overflow:hidden}
-.stat{padding:20px 22px;border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat b{display:block;font:700 30px/1.1 Fraunces,serif;color:var(--accent);margin-bottom:6px}
-.stat span{font-size:13.5px;color:var(--muted);line-height:1.45;display:block}
-@media (max-width:860px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-@media (max-width:480px){.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}}
+/* figures */
+figure{margin:0}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:clamp(14px,2.2vw,22px)}
+.fig h3,.fig-title{font:600 1rem/1.4 var(--body);margin-top:4px}
+.fig svg{display:block;width:100%;height:auto}
+.fig svg text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.axis{stroke:var(--line);stroke-width:1}
+.chance{stroke:var(--faint);stroke-width:1;stroke-dasharray:3 4}
+.base{stroke:var(--accent-2);stroke-width:1.5;stroke-dasharray:6 4}
+.curve{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linejoin:round}
+.pt{fill:var(--surface);stroke:var(--accent);stroke-width:2}
+.pt.on{fill:var(--accent);stroke:var(--accent)}
+.guide{stroke:var(--accent);stroke-width:1;opacity:.35}
+.fig svg text.base-t{fill:var(--accent-2)}
+.control{margin-top:10px}
+.control label{display:flex;justify-content:space-between;gap:12px;font-size:.84rem;color:var(--muted)}
+input[type=range]{width:100%;accent-color:var(--accent);margin:6px 0 0;height:28px}
+.readout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:10px;padding-top:12px;border-top:1px solid var(--line)}
+.readout b{display:block;font:500 1.3rem/1.2 var(--mono);font-variant-numeric:tabular-nums}
+.say{margin-top:10px;color:var(--muted);font-size:.94rem;min-height:3em}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:12px}
+details{margin-top:10px;font-size:.88rem}
+summary{cursor:pointer;color:var(--accent);min-height:28px}
+.scroll{overflow-x:auto}
+.mini{border-collapse:collapse;margin-top:6px;font:400 .82rem var(--mono);font-variant-numeric:tabular-nums}
+.mini th,.mini td{padding:4px 18px 4px 0;text-align:left;border-bottom:1px solid var(--line);font-weight:400;white-space:nowrap}
+.mini th{color:var(--faint)}
 
 /* sections */
-section{padding:72px 0 8px}
-.sh{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px;flex-wrap:wrap}
-.sh .eyebrow{font:500 12.5px "JetBrains Mono",monospace;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
-h2{font:700 clamp(28px,3.6vw,36px)/1.1 Fraunces,serif;margin:6px 0 0;letter-spacing:-.01em}
-.sh p{margin:0;color:var(--muted);max-width:420px;font-size:15px}
+section{padding-block:clamp(44px,6vw,72px);border-top:1px solid var(--line)}
+.sec-h{display:grid;gap:8px;margin-bottom:clamp(22px,3vw,34px);max-width:46em}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.08;letter-spacing:-.012em}
+.sec-h p{color:var(--muted);font-size:1.04rem}
 
-/* featured */
-.featured{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media (max-width:860px){.featured{grid-template-columns:1fr}}
-.feat{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column}
-.feat .kicker{font:500 12px "JetBrains Mono",monospace;color:var(--accent-2);text-transform:uppercase;letter-spacing:.06em}
-.feat h3{font:700 24px/1.2 Fraunces,serif;margin:8px 0 10px}
-.feat p{color:var(--muted);margin:0 0 18px}
-.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 20px;font:12.5px "JetBrains Mono",monospace}
-.flow span{background:var(--chip);border-radius:6px;padding:4px 8px;color:var(--ink)}
-.flow em{font-style:normal;color:var(--faint)}
-.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 20px}
-.nums div{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px}
-.nums b{display:block;font:700 22px Fraunces,serif;color:var(--accent)}
-.nums span{font-size:12.5px;color:var(--muted);line-height:1.35;display:block}
-.chapters{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:0 0 20px}
-.chapters div{border:1px solid var(--line);border-radius:10px;padding:10px 8px;background:var(--surface-2);text-align:center}
-.chapters b{display:block;font:700 18px Fraunces,serif;color:var(--accent)}
-.chapters span{font-size:11.5px;color:var(--muted);line-height:1.3;display:block}
-@media (max-width:480px){.chapters{grid-template-columns:repeat(3,1fr)}.nums{grid-template-columns:1fr}}
-.feat .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.link{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14.5px;text-decoration:none;color:var(--accent)}
-.link:hover{text-decoration:underline}
-.link svg{width:15px;height:15px}
+/* results ledger */
+.ledger{width:100%;border-collapse:collapse}
+.ledger th{font:500 .75rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint);text-align:left;padding:0 18px 10px 0;border-bottom:1px solid var(--ink)}
+.ledger td{padding:13px 18px 13px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.ledger td:last-child,.ledger th:last-child{padding-right:0}
+.ledger .r{font:500 1.28rem/1.25 var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--accent)}
+.ledger .w{color:var(--muted);white-space:nowrap}
+.ev{font-size:.88rem;white-space:nowrap}
+.ev.private{color:var(--faint)}
+@media (max-width:760px){
+  .ledger thead{position:absolute;left:-9999px}
+  .ledger tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 16px;padding-block:13px;border-bottom:1px solid var(--line)}
+  .ledger td{display:block;padding:0;border:0}
+  .ledger .r{grid-column:1/-1}
+  .ledger .m{grid-column:1/-1}
+  .ledger .w,.ledger .ev{white-space:normal;font-size:.86rem}
+}
+
+/* case studies */
+.case{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(20px,3vw,30px);padding-block:clamp(30px,4vw,48px);border-top:1px solid var(--line)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case:last-child{padding-bottom:0}
+.case-h{display:grid;gap:6px;max-width:48em}
+.case h3{font-size:clamp(1.35rem,2.4vw,1.75rem);line-height:1.16}
+.case-h p{color:var(--muted)}
+.card{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px clamp(20px,3vw,34px);margin:0}
+.card>div{min-width:0;border-top:1px solid var(--ink);padding-top:9px}
+.card dt{font:500 .75rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.card dd{margin:5px 0 0;font-size:.95rem}
+.card .limits dt{color:var(--warn)}
+.links{display:flex;flex-wrap:wrap;gap:6px 18px;font-weight:500}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,34px);align-items:start}
+.split>*{min-width:0}
+@media (max-width:860px){.hero,.split{grid-template-columns:minmax(0,1fr)}}
+
+/* heatmap */
+.heat{min-width:680px}
+.heat rect{shape-rendering:crispEdges}
+.c0{fill:var(--cell)}.c1{fill:var(--v1)}.c2{fill:var(--v2)}.c3{fill:var(--v3)}.c4{fill:var(--v4)}.c5{fill:var(--v5)}.c6{fill:var(--v6)}
+.heat .hl{fill:none;stroke:var(--ink);stroke-width:1.5;pointer-events:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font:400 .78rem var(--mono);color:var(--muted);align-items:center}
+.legend i{display:inline-block;width:11px;height:11px;margin-right:5px;vertical-align:-1px}
+.heat-read{font:400 .84rem var(--mono);color:var(--ink);margin-top:8px;min-height:1.5em}
+
+/* simple scaled bars */
+.bars{display:grid;gap:14px;margin-top:12px}
+.bar-l{display:flex;justify-content:space-between;gap:12px;font-size:.88rem;align-items:baseline}
+.bar-l .num{font-weight:500;font-size:1.02rem}
+.track{height:12px;background:var(--cell);margin-top:5px}
+.fill{display:block;height:100%}
+.flow{display:flex;flex-wrap:wrap;gap:4px 8px;font:400 .82rem var(--mono);color:var(--muted);margin-top:12px}
+.flow b{font-weight:500;color:var(--ink)}
+.stat3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:12px}
+.stat3 b{display:block;font:500 clamp(1.1rem,2.6vw,1.45rem)/1.2 var(--mono);color:var(--accent)}
+.stat3 span{font-size:.84rem;color:var(--muted);display:block;margin-top:3px}
 
 /* experience */
-.timeline{position:relative;border-left:2px solid var(--line);margin-left:6px}
-.job{position:relative;padding:0 0 34px 30px}
-.job:last-child{padding-bottom:0}
-.job::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
-.job .top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 16px}
-.job h3{margin:0;font-size:18.5px;font-weight:600}
-.job .when{font:13px "JetBrains Mono",monospace;color:var(--faint)}
-.job .org{color:var(--muted);margin:2px 0 10px}
-.job ul{margin:0;padding-left:18px}
-.job li{margin:6px 0}
-.job li::marker{color:var(--accent)}
-.job li b{font-weight:600}
+.job{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:8px clamp(20px,4vw,48px);padding-block:24px;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:1px solid var(--ink)}
+.job h3{font-size:1.2rem;line-height:1.2}
+.job .org{color:var(--muted);font-size:.94rem;margin-top:4px}
+.job .when{font:400 .82rem var(--mono);color:var(--faint);margin-top:4px}
+.job ul{margin:0;padding-left:18px;display:grid;gap:7px;max-width:44em}
+.job li::marker{color:var(--faint)}
+@media (max-width:700px){.job{grid-template-columns:minmax(0,1fr)}}
 
-/* projects */
-.filters{display:flex;gap:6px;flex-wrap:wrap}
-.filters button{font:500 13.5px Inter,sans-serif;border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:7px 13px;border-radius:999px;cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:600px){.grid{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--faint)}
-.card[hidden]{display:none}
-.card .cat{font:500 11.5px "JetBrains Mono",monospace;color:var(--faint);text-transform:uppercase;letter-spacing:.05em}
-.card h3{margin:6px 0 8px;font-size:17px;line-height:1.3}
-.card p{margin:0 0 14px;color:var(--muted);font-size:14.5px;flex:1}
-.card .metric{font-size:13px;font-weight:600;color:var(--accent);margin:0 0 12px}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font:12px "JetBrains Mono",monospace;background:var(--chip);padding:3px 8px;border-radius:6px;color:var(--muted)}
-.card .bottom{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);gap:8px}
-.card .bottom .link{font-size:13.5px}
-.card .note{font-size:12.5px;color:var(--faint)}
+/* more work */
+.more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(26px,3.5vw,44px) clamp(24px,4vw,56px)}
+.more article{min-width:0;display:grid;gap:7px;align-content:start}
+.more h3{font-size:1.2rem;line-height:1.2}
+.more p{color:var(--muted);font-size:.96rem}
+.more .tech{font:400 .78rem var(--mono);color:var(--faint)}
+.parts{display:flex;height:14px;gap:2px;margin-top:4px}
+.parts span{display:block}
+@media (max-width:700px){.more{grid-template-columns:minmax(0,1fr)}}
 
-/* skills */
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media (max-width:860px){.skills{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.skills{grid-template-columns:1fr}}
-.sk{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
-.sk h3{margin:0 0 12px;font-size:15px;font-weight:600;display:flex;gap:8px;align-items:center}
-.sk h3::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent)}
+/* toolkit */
+.tools{width:100%;border-collapse:collapse}
+.tools th,.tools td{text-align:left;vertical-align:baseline;padding:11px 20px 11px 0;border-bottom:1px solid var(--line);font-weight:400}
+.tools tbody th{font-weight:600;white-space:nowrap}
+.tools thead th{font:500 .75rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint);border-bottom-color:var(--ink);padding-top:0}
+.tools td:last-child{color:var(--muted);font-size:.9rem;padding-right:0}
+@media (max-width:760px){
+  .tools thead{position:absolute;left:-9999px}
+  .tools tr{display:grid;gap:2px;padding-block:12px;border-bottom:1px solid var(--line)}
+  .tools th,.tools td{padding:0;border:0}
+}
 
-/* education + contact */
-.edu{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media (max-width:600px){.edu{grid-template-columns:1fr}}
-.edu .sk p{margin:0;color:var(--muted);font-size:14.5px}
-.edu .sk .when{font:12.5px "JetBrains Mono",monospace;color:var(--faint);margin-top:8px;display:block}
-.contact{margin:80px 0 0;background:var(--ink);color:var(--bg);border-radius:22px;padding:clamp(28px,5vw,52px);display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
-@media (max-width:760px){.contact{grid-template-columns:1fr}}
-.contact h2{color:var(--bg)}
-.contact p{opacity:.75;margin:12px 0 0;max-width:460px}
-.contact .list{display:flex;flex-direction:column;gap:10px}
-.contact .list a{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;background:color-mix(in srgb,var(--bg) 8%,transparent);border:1px solid color-mix(in srgb,var(--bg) 16%,transparent);text-decoration:none;font-size:15px}
-.contact .list a:hover{background:color-mix(in srgb,var(--bg) 14%,transparent)}
-.contact .list svg{width:18px;height:18px;flex:none;opacity:.85}
-footer{padding:36px 0 48px;color:var(--faint);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-
-.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.pill b{animation:none}}
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px)}
+.contact>*{min-width:0}
+.contact p{color:var(--muted);margin-top:14px;max-width:32em}
+.reach{margin:0;display:grid;gap:0}
+.reach>div{display:grid;grid-template-columns:90px minmax(0,1fr);gap:12px;padding-block:11px;border-bottom:1px solid var(--line);align-items:baseline}
+.reach>div:first-child{border-top:1px solid var(--ink)}
+.reach dd{margin:0;overflow-wrap:anywhere}
+.edu{display:grid;gap:12px;margin-top:26px}
+.edu div b{display:block;font-weight:600}
+.edu div span{color:var(--muted);font-size:.92rem}
+@media (max-width:760px){.contact{grid-template-columns:minmax(0,1fr)}}
+footer{border-top:1px solid var(--line);padding-block:22px 34px;color:var(--faint);font-size:.86rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.top,.scale,.theme,.control,details{display:none}body{background:#fff}}
 </style>
 </head>
 <body>
-
-<nav>
+<a class="skip" href="#main">Skip to content</a>
+<div class="scale" aria-hidden="true"></div>
+<header class="top">
   <div class="wrap">
-    <a class="brand" href="#top"><i>G</i><span>Gaurav Mehta</span></a>
-    <ul>
-      <li><a href="#work">Work</a></li>
-      <li class="opt2"><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li class="opt"><a href="#skills">Skills</a></li>
-      <li class="opt"><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="theme" id="theme" aria-label="Toggle dark mode">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-    </button>
+    <a class="brand" href="#main">Gaurav Mehta</a>
+    <nav aria-label="Main">
+      <a class="opt2" href="#results">Results</a>
+      <a href="#cases">Work</a>
+      <a class="opt" href="#experience">Experience</a>
+      <a class="opt" href="#toolkit">Toolkit</a>
+      <a href="#contact">Contact</a>
+      <button class="theme" id="theme" type="button" aria-label="Switch between light and dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </nav>
   </div>
-</nav>
+</header>
 
-<main id="top" class="wrap">
-
-  <header class="hero">
+<main id="main">
+  <div class="wrap hero">
     <div>
-      <span class="pill"><b></b>Open to Data Science &amp; AI/ML roles · available now</span>
-      <h1>Data Scientist turning messy data into models people can <em>trust.</em></h1>
-      <p class="lede">I'm a data scientist with an <strong>MS from NC State</strong>. At <strong>Apexanalytix</strong> I built red-teaming and evaluation tooling for LLM agents. On my own time I research LLM-generated security patches and write a 30-chapter field book on AI infrastructure.</p>
+      <span class="status">Open to data science and AI/ML roles · NYC area · Available now</span>
+      <p class="kicker">Gaurav Mehta, Data Scientist</p>
+      <h1>I find out whether AI systems actually work.</h1>
+      <p class="lede">At ApexAnalytix I built the red-team tests, benchmarks and monitoring pipelines behind LLMs and AI agents. I hold an MS in Data Science from NC State, and my projects report their limits along with their results.</p>
       <div class="cta">
-        <a class="btn primary" href="Resume_Gaurav_Mehta.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>Resume</a>
-        <a class="btn" href="https://github.com/Gmehta604" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/gauravmehta3223/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+        <a class="btn primary" href="Resume_Gaurav_Mehta.pdf">Resume (PDF)</a>
+        <a class="btn" href="https://github.com/gauravnmehta3223" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/gauravmehta3223/" rel="noopener">LinkedIn</a>
       </div>
     </div>
 
-    <div class="term" aria-hidden="true">
-      <div class="bar"><span></span><span></span><span></span></div>
-<pre><span class="c"># whoami</span>
-<span class="k">name</span>      = <span class="s">"Gaurav Mehta"</span>
-<span class="k">focus</span>     = [<span class="s">"LLM evaluation"</span>, <span class="s">"AI security"</span>,
-             <span class="s">"ML pipelines"</span>, <span class="s">"data engineering"</span>]
-<span class="k">education</span> = <span class="s">"MS Data Science, NC State '26"</span>
-<span class="k">location</span>  = <span class="s">"United States"</span>
-<span class="k">status</span>    = <span class="s">"F1 - OPT"</span>
-<span class="k">start</span>     = <span class="v">immediately</span></pre>
-    </div>
-  </header>
-
-  <div class="stats reveal">
-    <div class="stat"><b>440</b><span>red-team test cases for LLM agents (OWASP LLM Top 10, NIST AI 100)</span></div>
-    <div class="stat"><b>95%+</b><span>less pre-release testing time for AI agents, weeks down to 1–2 hours</span></div>
-    <div class="stat"><b>40–50%</b><span>fewer vulnerabilities in LLM security patches when guided by semantic hints</span></div>
-    <div class="stat"><b>+23%</b><span>invoice extraction accuracy with fine-tuned DONUT over baseline</span></div>
+    <figure class="fig" aria-labelledby="f1-title">
+      <div class="label">Fig. 1 · Privacy budget sweep</div>
+      <div class="fig-title" id="f1-title">How much accuracy does patient privacy cost?</div>
+      <svg id="sweep" viewBox="0 0 560 300" role="img" aria-label="Line chart of federated model accuracy against the privacy budget epsilon on a log scale. Accuracy stays near 50 percent, which is chance, up to epsilon 2, reaches 57.9 percent at epsilon 10, and matches the non-private 68.4 percent baseline at epsilon 50 and above."></svg>
+      <div class="control">
+        <label for="eps"><span>Stronger privacy</span><span>Weaker privacy</span></label>
+        <input id="eps" type="range" min="0" max="7" step="1" value="5" aria-label="Privacy budget epsilon">
+      </div>
+      <div class="readout" aria-live="polite">
+        <div><span class="label">Epsilon</span><b id="r-e">10</b></div>
+        <div><span class="label">Accuracy</span><b id="r-a">57.9%</b></div>
+        <div><span class="label">Noise <span style="text-transform:none">σ</span></span><b id="r-n">0.48</b></div>
+      </div>
+      <p class="say" id="r-s"></p>
+      <figcaption>Final-round accuracy of a federated mortality model on MIMIC-IV, 7 clients, single seed. <a href="#privacy">Read the case study</a>.</figcaption>
+    </figure>
   </div>
 
-  <!-- FEATURED -->
-  <section id="work">
-    <div class="sh reveal">
-      <div><div class="eyebrow">Featured work</div><h2>Two things I'm proud of</h2></div>
-      <p>Both are about the same question: how do you know an AI system is doing what you think it's doing?</p>
+  <section id="results">
+    <div class="wrap">
+      <div class="sec-h">
+        <span class="label">Results</span>
+        <h2>What I measured, and where you can check it</h2>
+      </div>
+      <table class="ledger">
+        <thead><tr><th scope="col">Result</th><th scope="col">What it measures</th><th scope="col">Where</th><th scope="col">Evidence</th></tr></thead>
+        <tbody>
+          <tr><td class="r">95%+</td><td class="m">Less pre-release testing for AI agents and RAG systems, from weeks to 1–2 hours</td><td class="w">ApexAnalytix</td><td class="ev private">Employer work</td></tr>
+          <tr><td class="r">440</td><td class="m">Red-team test cases aligned to the OWASP Top 10 for LLMs and NIST AI 100</td><td class="w">ApexAnalytix</td><td class="ev private">Employer work</td></tr>
+          <tr><td class="r">+15%</td><td class="m">Product performance after fixes found by my agent monitoring pipelines</td><td class="w">ApexAnalytix</td><td class="ev private">Employer work</td></tr>
+          <tr><td class="r">0.71 → 0.83</td><td class="m">F1 for customer churn prediction on 1M+ banking records</td><td class="w">LTIMindtree</td><td class="ev private">Client work</td></tr>
+          <tr><td class="r">+23%</td><td class="m">Invoice extraction accuracy over baseline with a fine-tuned Donut model</td><td class="w">NC State research</td><td class="ev"><a href="#invoices">Code and data analysis</a></td></tr>
+          <tr><td class="r">40–50%</td><td class="m">Fewer vulnerabilities in LLM security patches when guided by semantic hints</td><td class="w">Research project</td><td class="ev"><a href="#patches">Public code</a></td></tr>
+          <tr><td class="r">91.6%</td><td class="m">Four-class brain MRI classification on 263 held-out images</td><td class="w">Course project</td><td class="ev"><a href="#mri">Public notebook</a></td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="featured">
-      <article class="feat reveal">
-        <span class="kicker">Research · LLMs for security</span>
-        <h3>Automated security patch generation with semantic hints</h3>
-        <p>Can a small specialist model help a code LLM fix vulnerabilities? I built a pipeline where CodeAstra-7B writes a short hint about each vulnerability, then CodeLlama-7B patches the code with and without that hint. Each patch is scored for security, whether it still compiles and runs, and how close it is to the expert fix.</p>
-        <div class="flow"><span>Juliet C/C++</span><em>→</em><span>CodeAstra hints</span><em>→</em><span>CodeLlama patches</span><em>→</em><span>flawfinder · gcc · CodeBERT</span></div>
-        <div class="nums">
-          <div><b>40–50%</b><span>fewer vulnerabilities with hints</span></div>
-          <div><b>60–70%</b><span>fewer high-severity issues</span></div>
-          <div><b>&gt;85%</b><span>of patches still compile</span></div>
+  </section>
+
+  <section id="cases">
+    <div class="wrap">
+      <div class="sec-h">
+        <span class="label">Case studies</span>
+        <h2>Four projects, written up like model cards</h2>
+        <p>Each one states the question, the data, the method, the result and what the result can't tell you.</p>
+      </div>
+
+      <article class="case" id="privacy">
+        <div class="case-h">
+          <span class="label">Privacy · Healthcare · Team project</span>
+          <h3>Differential privacy in federated learning</h3>
+          <p>With Shrawani Gulhane and Vasudev Menon, for MA 591, April 2025. The sweep is Fig. 1 at the top of this page.</p>
         </div>
-        <div class="foot">
-          <div class="tags"><span class="tag">CodeLlama</span><span class="tag">Hugging Face</span><span class="tag">8-bit quant</span><span class="tag">CodeBERT</span></div>
-          <a class="link" href="https://github.com/Gmehta604/GAI4SE_Project" target="_blank" rel="noopener">View code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-        </div>
+        <dl class="card">
+          <div><dt>Question</dt><dd>Can simulated hospitals train a shared mortality model without pooling patient data, and what does adding privacy noise cost?</dd></div>
+          <div><dt>Data</dt><dd>MIMIC-IV. Patient-level means of six vital signs, undersampled from about 9% positives to a balanced set of 4,726 patients.</dd></div>
+          <div><dt>Method</dt><dd>Small PyTorch network, FedAvg in Flower over 25 rounds, 7 clients split by demographic group, local DP with update clipping at 5.0 and δ = 1e-5.</dd></div>
+          <div><dt>Result</dt><dd>Federation matched centralized training (68.4% vs 68.6%). Accuracy sat near chance at ε ≤ 2 and recovered only at ε ≥ 50, a budget that offers weak formal privacy.</dd></div>
+          <div class="limits"><dt>Limits</dt><dd>One random seed per run, and small clients swing a lot between rounds. The model is deliberately small, so the trade-off matters more than the absolute accuracy.</dd></div>
+        </dl>
+        <details>
+          <summary>See the data behind Fig. 1</summary>
+          <div class="scroll">
+            <table class="mini">
+              <thead><tr><th scope="col">ε</th><th scope="col">Accuracy</th><th scope="col">Noise σ</th></tr></thead>
+              <tbody id="sweep-table"></tbody>
+            </table>
+          </div>
+          <p class="say" style="min-height:0">The ε = 0.1 row is read from the notebook's plot, and its noise value follows the same formula as the logged runs. The other rows come from the notebook's logs.</p>
+        </details>
+        <div class="links"><a href="https://github.com/gauravnmehta3223/federated-learning-differential-privacy" rel="noopener">Code and notebooks</a><a href="https://github.com/gauravnmehta3223/federated-learning-differential-privacy/blob/main/Final_Report.pdf" rel="noopener">Final report</a></div>
       </article>
 
-      <article class="feat reveal">
-        <span class="kicker">Writing · AI infrastructure</span>
-        <h3>From Gradient to Gigawatt: a field book on AI</h3>
-        <p>A 30-chapter book I'm writing as a set of web pages. It goes from the first artificial neuron to today's GPU clusters and data centers, and covers transformers, inference serving, RAG, agents and evals along the way. Deep-dive chapters come with runnable code.</p>
-        <div class="chapters">
-          <div><b>I</b><span>Foundations</span></div>
-          <div><b>II</b><span>Deep learning</span></div>
-          <div><b>III</b><span>LLMs</span></div>
-          <div><b>IV</b><span>AI infra</span></div>
-          <div><b>V</b><span>Industry</span></div>
+      <article class="case" id="invoices">
+        <div class="case-h">
+          <span class="label">Document AI · NC State research</span>
+          <h3>Reading invoices with a fine-tuned Donut transformer</h3>
+          <p>Layout variety was the main thing limiting automated extraction. Fig. 2 shows why, using the project's own labels.</p>
         </div>
-        <div class="foot">
-          <div class="tags"><span class="tag">GPUs &amp; CUDA</span><span class="tag">Distributed training</span><span class="tag">Serving</span><span class="tag">Evals</span></div>
-          <a class="link" href="https://github.com/Gmehta604/AI-Infrastucture---My-Book" target="_blank" rel="noopener">Read the book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <figure class="fig" aria-labelledby="f2-title">
+          <div class="label">Fig. 2 · Fields by invoice template</div>
+          <div class="fig-title" id="f2-title">No two of the 50 templates contain the same set of fields</div>
+          <div class="scroll" tabindex="0" aria-label="Scrollable chart of invoice fields by template">
+            <svg id="heat" class="heat" role="img" aria-label="Matrix of 32 invoice fields across 50 templates. Only the catch-all OTHER field appears in every template, and 15 of the 32 fields appear in 10 templates or fewer."></svg>
+          </div>
+          <div class="heat-read" id="heat-read" aria-hidden="true">Point at a cell to read it.</div>
+          <div class="legend" id="legend"></div>
+          <figcaption>Each column is a template and each row is a field. Templates are ordered so similar ones sit together. Only the catch-all OTHER field appears in all 50, and 15 of the 32 fields appear in 10 templates or fewer. A typical pair of templates shares under half of its fields (mean Jaccard overlap 0.47).</figcaption>
+        </figure>
+        <dl class="card">
+          <div><dt>Question</dt><dd>Can one model read invoices across many layouts without a separate OCR step?</dd></div>
+          <div><dt>Data</dt><dd>10,000 synthetic invoices from 50 templates, 200 each, with 32 labeled field types.</dd></div>
+          <div><dt>Method</dt><dd>Fine-tuned donut-base with PyTorch Lightning and benchmarked it against traditional OCR. Scored with exact JSON match, BLEU, ROUGE, and per-field precision, recall and F1.</dd></div>
+          <div><dt>Result</dt><dd>Extraction accuracy rose 23% over baseline.</dd></div>
+          <div class="limits"><dt>Limits</dt><dd>The invoices are synthetic, so real scans would be harder. The raw images are too large for the repository, which holds the labels and code.</dd></div>
+        </dl>
+        <div class="links"><a href="https://github.com/gauravnmehta3223/invoice-reader-donut" rel="noopener">Code and labels</a></div>
+      </article>
+
+      <article class="case" id="patches">
+        <div class="case-h">
+          <span class="label">LLMs for security · Research project</span>
+          <h3>Security patches from LLMs, with and without hints</h3>
+          <p>A small specialist model writes a short description of each vulnerability, and a code LLM patches the function with and without that hint.</p>
         </div>
+        <div class="split">
+          <figure class="fig">
+            <div class="label">Pipeline</div>
+            <div class="flow"><b>Juliet C/C++</b><span>→</span><b>CodeAstra-7B hints</b><span>→</span><b>CodeLlama-7B patches</b><span>→</span><b>flawfinder · compile test · CodeBERT</b></div>
+            <div class="stat3">
+              <div><b>40–50%</b><span>fewer vulnerabilities with hints</span></div>
+              <div><b>60–70%</b><span>fewer high-severity issues</span></div>
+              <div><b>&gt;85%</b><span>of patches still compile</span></div>
+            </div>
+          </figure>
+          <dl class="card">
+            <div><dt>Question</dt><dd>Does a security-specific hint help a general code LLM write safer fixes without breaking the code?</dd></div>
+            <div class="limits"><dt>Limits</dt><dd>Flawfinder is a static scanner, so a clean scan doesn't prove a patch is secure. Juliet is a synthetic benchmark.</dd></div>
+          </dl>
+        </div>
+        <div class="links"><a href="https://github.com/Gmehta604/GAI4SE_Project" rel="noopener">Code</a></div>
+      </article>
+
+      <article class="case" id="mri">
+        <div class="case-h">
+          <span class="label">Computer vision · Course project</span>
+          <h3>Brain tumor classification, and the number I don't headline</h3>
+          <p>The notebook prints 98.2%, but that test set includes images used in training. The result I report is the one measured on held-out images.</p>
+        </div>
+        <div class="split">
+          <figure class="fig" aria-labelledby="f3-title">
+            <div class="label">Fig. 3 · Two accuracy figures, one model</div>
+            <div class="fig-title" id="f3-title">Only one of these is an independent measurement</div>
+            <div class="bars">
+              <div>
+                <div class="bar-l"><span>Held-out validation, 263 images</span><span class="num">91.6%</span></div>
+                <div class="track"><span class="fill" style="width:91.6%;background:var(--accent)"></span></div>
+              </div>
+              <div>
+                <div class="bar-l"><span>Test folder, overlaps with training</span><span class="num"><s>98.2%</s></span></div>
+                <div class="track"><span class="fill" style="width:98.2%;background:var(--faint);opacity:.5"></span></div>
+              </div>
+            </div>
+            <figcaption>Bars start at 0%. The fix is already known: train on the 5,712 Training images and test on the 1,311 Testing images.</figcaption>
+          </figure>
+          <dl class="card">
+            <div><dt>Data and method</dt><dd>Kaggle brain MRI dataset with four classes. Fine-tuned EfficientNetB3 from ImageNet weights, class weighting, compared with a small CNN built from scratch.</dd></div>
+            <div class="limits"><dt>Limits</dt><dd>A single dataset and a single training run. This isn't a medical device and isn't validated for clinical use.</dd></div>
+          </dl>
+        </div>
+        <div class="links"><a href="https://github.com/gauravnmehta3223/brain-tumor-mri-classification" rel="noopener">Notebook and report</a></div>
       </article>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience">
-    <div class="sh reveal">
-      <div><div class="eyebrow">Experience</div><h2>Where I've worked</h2></div>
-    </div>
-    <div class="timeline reveal">
+    <div class="wrap">
+      <div class="sec-h"><span class="label">Experience</span><h2>Where I've done this work</h2></div>
       <div class="job">
-        <div class="top"><h3>Data Science Intern</h3><span class="when">Jul – Sep 2026</span></div>
-        <div class="org">Apexanalytix · Greensboro, NC</div>
+        <div><h3>Data Science Intern</h3><div class="org">ApexAnalytix, Greensboro, NC</div><div class="when">Jul – Sep 2026</div></div>
         <ul>
-          <li>Wrote <b>440 red-team test cases</b> aligned to the OWASP Top 10 for LLMs and NIST AI 100 to test chatbot and AI-agent security.</li>
-          <li>Built an automated testing framework for AI agents and RAG systems (Python, PostgreSQL; deployed with Docker, Helm and Kubernetes). It cut pre-release testing from <b>weeks to 1–2 hours</b>.</li>
-          <li>Built a benchmarking framework for in-house LLMs that generated client-facing model cards and drove model updates (<b>+4%</b> product performance).</li>
-          <li>Built SQL and Python monitoring pipelines that found bottlenecks in client-deployed agents. The fixes they pointed to improved performance by <b>15%</b>.</li>
+          <li>Wrote 440 red-team test cases aligned to the OWASP Top 10 for LLMs and NIST AI 100 to test chatbot and AI agent security.</li>
+          <li>Built an automated testing framework for AI agents and RAG systems in Python and PostgreSQL, deployed with Docker, Helm and Kubernetes. It cut pre-release testing from weeks to 1–2 hours.</li>
+          <li>Built a benchmarking framework for in-house LLMs that generated client model cards and drove model updates, improving AI product performance by 4%.</li>
+          <li>Built SQL and Python monitoring pipelines that found bottlenecks in client-deployed agents. The fixes improved product performance by 15%.</li>
         </ul>
       </div>
       <div class="job">
-        <div class="top"><h3>Research Assistant</h3><span class="when">May – Jul 2025</span></div>
-        <div class="org">North Carolina State University</div>
+        <div><h3>Research Assistant</h3><div class="org">North Carolina State University</div><div class="when">May – Jul 2025</div></div>
         <ul>
-          <li>Evaluated LLM-driven document extraction on <b>10,000 invoice images</b> across 50 templates and found that format variability was the main bottleneck.</li>
-          <li>Benchmarked traditional OCR against baseline and fine-tuned DONUT transformers, improving extraction accuracy by <b>23%</b>.</li>
+          <li>Assessed LLM-driven document extraction on 10,000 invoice images across 50 templates and identified format variability as the key bottleneck.</li>
+          <li>Benchmarked traditional OCR against baseline and fine-tuned Donut models, improving extraction accuracy by 23% over baseline.</li>
         </ul>
       </div>
       <div class="job">
-        <div class="top"><h3>Data Analyst Intern</h3><span class="when">Jan – Mar 2024</span></div>
-        <div class="org">LTIMindtree · Mumbai</div>
+        <div><h3>Data Analyst Intern</h3><div class="org">LTIMindtree, Mumbai</div><div class="when">Jan – Mar 2024</div></div>
         <ul>
-          <li>Built a churn-prediction pipeline on <b>1M+ banking customer records</b> that flagged at-risk accounts with 84% accuracy.</li>
-          <li>Raised F1 from <b>0.71 to 0.83</b> by comparing Random Forest, XGBoost and Logistic Regression with tuning and feature selection.</li>
-          <li>Moved preprocessing to PySpark and AWS Glue (35% faster) and delivered QuickSight churn reports covering 50,000+ accounts.</li>
+          <li>Built a churn prediction pipeline on 1M+ banking customer records that flagged at-risk accounts with 84% accuracy.</li>
+          <li>Raised F1 from 0.71 to 0.83 by comparing Random Forest, XGBoost and Logistic Regression with tuning and feature selection.</li>
+          <li>Moved feature engineering to PySpark and AWS Glue, cutting pipeline runtime by 35% and enabling automated retraining.</li>
+          <li>Built QuickSight reporting on churn risk for 50,000+ accounts, used by business stakeholders for retention strategy.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="sh reveal">
-      <div><div class="eyebrow">Projects</div><h2>More things I've built</h2></div>
-      <div class="filters" role="group" aria-label="Filter projects">
-        <button aria-pressed="true" data-f="all">All</button>
-        <button aria-pressed="false" data-f="ai">AI &amp; ML</button>
-        <button aria-pressed="false" data-f="data">Data</button>
-        <button aria-pressed="false" data-f="sys">Systems</button>
+  <section id="more">
+    <div class="wrap">
+      <div class="sec-h"><span class="label">More work</span><h2>Analytics, data engineering and writing</h2></div>
+      <div class="more">
+        <article>
+          <h3><a href="https://github.com/gauravnmehta3223/AI-Infrastucture---My-Book" rel="noopener">From Gradient to Gigawatt</a></h3>
+          <p>A 30-chapter field book on AI that I'm writing as web pages, from the first artificial neuron to GPU clusters and data centers. Deep-dive chapters come with runnable code.</p>
+          <div class="parts" role="img" aria-label="Chapters by part: Foundations 3, Deep learning 4, Transformers and LLMs 7, AI infrastructure 11, Industry and frontier 4, Glossary 1.">
+            <span style="flex:3;background:var(--v1)"></span><span style="flex:4;background:var(--v2)"></span><span style="flex:7;background:var(--v3)"></span><span style="flex:11;background:var(--v4)"></span><span style="flex:4;background:var(--v5)"></span><span style="flex:1;background:var(--v6)"></span>
+          </div>
+          <div class="tech">3 foundations · 4 deep learning · 7 LLMs · 11 infrastructure · 4 industry · glossary</div>
+        </article>
+        <article>
+          <h3><a href="https://github.com/gauravnmehta3223/f1-analytics-dashboard" rel="noopener">F1 analytics dashboard</a></h3>
+          <p>An interactive app for lap times, tire strategy, sector splits, position changes and driver consistency across race, sprint, qualifying and practice sessions, with automatic DNF detection.</p>
+          <div class="tech">Streamlit · FastF1 · Plotly · pandas</div>
+        </article>
+        <article>
+          <h3>Sales analytics data pipeline</h3>
+          <p>An end-to-end ELT pipeline with dimensional modeling that turns raw sales and marketing data into 10+ fact and dimension tables, feeding three Tableau dashboards. Code available on request.</p>
+          <div class="tech">Python · SQL · dbt · Tableau</div>
+        </article>
+        <article>
+          <h3><a href="https://github.com/Gmehta604/Dbms_project" rel="noopener">Inventory database for a meal manufacturer</a></h3>
+          <p>A MySQL backend with triggers and stored procedures. Batches pick ingredient lots first-expiry-first in one transaction and roll back if two ingredients conflict. Team of 4, CSC 540.</p>
+          <div class="tech">MySQL · stored procedures · Python</div>
+        </article>
       </div>
     </div>
+  </section>
 
-    <div class="grid">
-      <article class="card reveal" data-c="ai">
-        <span class="cat">AI · Document intelligence</span>
-        <h3>Invoice Reader with DONUT</h3>
-        <div class="metric">+23% extraction accuracy</div>
-        <p>Fine-tuned the OCR-free DONUT vision transformer to pull key fields straight from invoice images, and benchmarked it against traditional OCR.</p>
-        <div class="tags"><span class="tag">PyTorch</span><span class="tag">Transformers</span><span class="tag">Hugging Face</span></div>
-        <div class="bottom"><span class="note">NC State research</span><a class="link" href="https://github.com/Gmehta604/Invoice_Reader_Using_Donut" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
-
-      <article class="card reveal" data-c="ai">
-        <span class="cat">ML · Privacy</span>
-        <h3>Federated Learning with Differential Privacy</h3>
-        <div class="metric">10 clients · 71K patient records</div>
-        <p>Trained a model to predict in-hospital mortality from patient vital signs. The data stays split across 10 simulated hospital clients, and differential privacy protects each model update.</p>
-        <div class="tags"><span class="tag">Flower</span><span class="tag">TensorFlow</span><span class="tag">Pandas</span></div>
-        <div class="bottom"><span class="note">Healthcare data</span><a class="link" href="https://github.com/Gmehta604/Differential-Privacy-Federated-Learning" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
-
-      <article class="card reveal" data-c="ai">
-        <span class="cat">Deep learning · Vision</span>
-        <h3>Brain Tumor Detection</h3>
-        <div class="metric">CNN on MRI scans</div>
-        <p>A convolutional network that classifies MRI scans as tumor or no tumor, with OpenCV preprocessing and dropout regularization.</p>
-        <div class="tags"><span class="tag">TensorFlow/Keras</span><span class="tag">OpenCV</span><span class="tag">scikit-learn</span></div>
-        <div class="bottom"><span class="note">Medical imaging</span><a class="link" href="https://github.com/Gmehta604/Brain_Tumor_Detection-" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
-
-      <article class="card reveal" data-c="data">
-        <span class="cat">Analytics · Sports data</span>
-        <h3>F1 Data Analytics Dashboard</h3>
-        <div class="metric">Race, sprint, qualifying &amp; practice</div>
-        <p>A Streamlit dashboard on live FastF1 data with lap-time comparisons, position changes, sector splits, tire strategy, consistency heatmaps and speed maps. It also detects DNFs automatically.</p>
-        <div class="tags"><span class="tag">Streamlit</span><span class="tag">FastF1</span><span class="tag">Plotly</span><span class="tag">Pandas</span></div>
-        <div class="bottom"><span class="note">Interactive app</span><a class="link" href="https://github.com/Gmehta604/F1-Data-Analysis-Project-" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
-
-      <article class="card reveal" data-c="data">
-        <span class="cat">Data engineering · BI</span>
-        <h3>Sales Analytics Data Pipeline</h3>
-        <div class="metric">10+ fact &amp; dimension tables</div>
-        <p>An end-to-end ELT pipeline with dimensional modeling that turns raw sales and marketing data into analytics-ready tables. It feeds three Tableau dashboards for validation and self-service BI.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">dbt</span><span class="tag">Tableau</span></div>
-        <div class="bottom"><span class="note">Code available on request</span></div>
-      </article>
-
-      <article class="card reveal" data-c="sys data">
-        <span class="cat">Databases · Transactions</span>
-        <h3>Inventory DBMS for a Meal Manufacturer</h3>
-        <div class="metric">Atomic batches · rollback on health risk</div>
-        <p>A MySQL backend with schema, triggers and stored procedures. Production batches pick ingredient lots first-expiry-first and commit in a single transaction, and the procedure rolls back if two ingredients in a batch conflict.</p>
-        <div class="tags"><span class="tag">MySQL</span><span class="tag">Stored procedures</span><span class="tag">Python</span></div>
-        <div class="bottom"><span class="note">Team of 4 · CSC 540</span><a class="link" href="https://github.com/Gmehta604/Dbms_project" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
-
-      <article class="card reveal" data-c="sys">
-        <span class="cat">Blockchain · Full stack</span>
-        <h3>Blockchain Inventory Management</h3>
-        <div class="metric">Smart contracts + React + Node</div>
-        <p>Product registration and verification on-chain, so buyers can check that goods are genuine. It has a React dashboard and a Node/MongoDB server tying the chain to a regular backend.</p>
-        <div class="tags"><span class="tag">Solidity</span><span class="tag">Hardhat</span><span class="tag">React</span><span class="tag">MongoDB</span></div>
-        <div class="bottom"><span class="note">Web3</span><a class="link" href="https://github.com/Gmehta604/Blockchain-Inventory-Management" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
-
-      <article class="card reveal" data-c="sys">
-        <span class="cat">Web app</span>
-        <h3>Quiz Application</h3>
-        <div class="metric">Admin &amp; user roles</div>
-        <p>An online exam app where admins create quizzes and questions, users take them, and results are stored as per-user reports. Passwords are hashed.</p>
-        <div class="tags"><span class="tag">JavaScript</span><span class="tag">MongoDB</span></div>
-        <div class="bottom"><span class="note">Full stack</span><a class="link" href="https://github.com/Gmehta604/Quiz-Application" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
+  <section id="toolkit">
+    <div class="wrap">
+      <div class="sec-h"><span class="label">Toolkit</span><h2>Tools, and where I've used them</h2></div>
+      <table class="tools">
+        <thead><tr><th scope="col">Area</th><th scope="col">Tools</th><th scope="col">Used in</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">LLMs and evaluation</th><td>Hugging Face, Transformers, red-teaming, RAG testing, model cards, NLP</td><td>ApexAnalytix, security patches, invoices</td></tr>
+          <tr><th scope="row">Machine learning</th><td>PyTorch, TensorFlow/Keras, scikit-learn, XGBoost, Random Forest, Flower, Opacus</td><td>LTIMindtree, federated learning, MRI</td></tr>
+          <tr><th scope="row">Data engineering</th><td>PySpark, dbt, AWS Glue, pandas, NumPy, dimensional modeling</td><td>LTIMindtree, sales pipeline</td></tr>
+          <tr><th scope="row">MLOps</th><td>Docker, Kubernetes, Helm, FluxCD, GitHub Actions, Git</td><td>ApexAnalytix</td></tr>
+          <tr><th scope="row">Databases and cloud</th><td>PostgreSQL, MySQL, MongoDB, AWS</td><td>ApexAnalytix, LTIMindtree, inventory database</td></tr>
+          <tr><th scope="row">Analytics and visualization</th><td>Tableau, Power BI, QuickSight, Streamlit, Plotly, Excel</td><td>LTIMindtree, F1 dashboard, sales pipeline</td></tr>
+          <tr><th scope="row">Languages</th><td>Python, SQL, R, Java, JavaScript</td><td>All of the above</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="sh reveal"><div><div class="eyebrow">Skills</div><h2>Toolkit</h2></div></div>
-    <div class="skills">
-      <div class="sk reveal"><h3>LLMs &amp; AI</h3><div class="tags"><span class="tag">LLM evaluation</span><span class="tag">Red-teaming</span><span class="tag">RAG</span><span class="tag">Hugging Face</span><span class="tag">Transformers</span><span class="tag">PyTorch</span><span class="tag">NLP</span></div></div>
-      <div class="sk reveal"><h3>Machine learning</h3><div class="tags"><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Random Forest</span><span class="tag">TensorFlow</span><span class="tag">Federated learning</span><span class="tag">CNNs</span></div></div>
-      <div class="sk reveal"><h3>Data engineering</h3><div class="tags"><span class="tag">PySpark</span><span class="tag">dbt</span><span class="tag">AWS Glue</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Dimensional modeling</span></div></div>
-      <div class="sk reveal"><h3>MLOps &amp; DevOps</h3><div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Helm</span><span class="tag">FluxCD</span><span class="tag">GitHub Actions</span><span class="tag">Git</span></div></div>
-      <div class="sk reveal"><h3>Databases &amp; cloud</h3><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">AWS</span></div></div>
-      <div class="sk reveal"><h3>Languages &amp; viz</h3><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">R</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Streamlit</span></div></div>
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <span class="label">Contact</span>
+        <h2 style="margin-top:8px">Hiring for data science or AI/ML?</h2>
+        <p>I'm based in Livingston, NJ, looking in the New York City area, and can start right away. I'm on OPT (STEM OPT eligible), so no sponsorship is needed. Email is the fastest way to reach me.</p>
+        <div class="edu">
+          <div><b>M.S. Data Science</b><span>North Carolina State University, Aug 2024 – May 2026</span></div>
+          <div><b>B.S. Computer Science</b><span>K.J. Somaiya College of Engineering, Mumbai, Sep 2020 – May 2024</span></div>
+        </div>
+      </div>
+      <dl class="reach">
+        <div><dt class="label">Email</dt><dd><a href="mailto:gauravnmehta3223@gmail.com">gauravnmehta3223@gmail.com</a></dd></div>
+        <div><dt class="label">Phone</dt><dd><a href="tel:+19844394021">+1 (984) 439-4021</a></dd></div>
+        <div><dt class="label">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/gauravmehta3223/" rel="noopener">linkedin.com/in/gauravmehta3223</a></dd></div>
+        <div><dt class="label">GitHub</dt><dd><a href="https://github.com/gauravnmehta3223" rel="noopener">github.com/gauravnmehta3223</a></dd></div>
+        <div><dt class="label">Resume</dt><dd><a href="Resume_Gaurav_Mehta.pdf">Resume_Gaurav_Mehta.pdf</a></dd></div>
+      </dl>
     </div>
   </section>
-
-  <section id="education">
-    <div class="sh reveal"><div><div class="eyebrow">Education</div><h2>Education</h2></div></div>
-    <div class="edu">
-      <div class="sk reveal"><h3>M.S. Data Science</h3><p>North Carolina State University, Raleigh</p><span class="when">Aug 2024 – May 2026</span></div>
-      <div class="sk reveal"><h3>B.S. Computer Science</h3><p>K.J. Somaiya College of Engineering, Mumbai</p><span class="when">Sep 2020 – May 2024</span></div>
-    </div>
-  </section>
-
-  <div class="contact reveal" id="contact">
-    <div>
-      <h2>Let's talk.</h2>
-      <p>I'm looking for data science and AI/ML roles in the New York City area and can start right away. I'm on OPT (STEM OPT eligible), so no sponsorship is needed. Email is the fastest way to reach me.</p>
-    </div>
-    <div class="list">
-      <a href="mailto:gauravnmehta3223@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>gauravnmehta3223@gmail.com</a>
-      <a href="tel:+19844394021"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>+1 (984) 439-4021</a>
-      <a href="https://www.linkedin.com/in/gauravmehta3223/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>linkedin.com/in/gauravmehta3223</a>
-      <a href="Resume_Gaurav_Mehta.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>Download resume (PDF)</a>
-    </div>
-  </div>
-
-  <footer><span>© 2026 Gaurav Mehta</span></footer>
 </main>
+
+<footer><div class="wrap">© 2026 Gaurav Mehta. Charts are drawn from each project's own notebooks and labels.</div></footer>
 
 <script>
 // theme toggle (remembers choice when storage is available)
@@ -438,30 +518,117 @@ footer{padding:36px 0 48px;color:var(--faint);font-size:13px;display:flex;justif
   var root=document.documentElement, key="gm-theme";
   try{var saved=localStorage.getItem(key); if(saved) root.setAttribute("data-theme",saved);}catch(e){}
   document.getElementById("theme").addEventListener("click",function(){
-    var cur=root.getAttribute("data-theme");
-    if(!cur){cur=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}
+    var cur=root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
     var next=cur==="dark"?"light":"dark";
     root.setAttribute("data-theme",next);
     try{localStorage.setItem(key,next);}catch(e){}
   });
 })();
 
-// project filters
+function el(parent,name,attrs,text){
+  var n=document.createElementNS("http://www.w3.org/2000/svg",name);
+  for(var k in attrs) n.setAttribute(k,attrs[k]);
+  if(text!=null) n.textContent=text;
+  parent.appendChild(n);
+  return n;
+}
+
+// Fig. 1: privacy sweep. Source: ddp_federated_learning_DemographicGroup_split.ipynb
 (function(){
-  var btns=document.querySelectorAll(".filters button"), cards=document.querySelectorAll(".grid .card");
-  btns.forEach(function(b){b.addEventListener("click",function(){
-    btns.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
-    var f=b.dataset.f;
-    cards.forEach(function(c){c.hidden = !(f==="all" || c.dataset.c.split(" ").indexOf(f)>-1);});
-  })});
+  var data=[
+    {e:0.1,a:49.3,n:48.45,approx:true},
+    {e:0.5,a:52.3,n:9.69},
+    {e:1,a:47.2,n:4.84},
+    {e:2,a:50.7,n:2.42},
+    {e:5,a:53.8,n:0.97},
+    {e:10,a:57.9,n:0.48},
+    {e:50,a:68.9,n:0.097},
+    {e:100,a:69.0,n:0.048}
+  ];
+  var BASE=68.4, CHANCE=50;
+  var svg=document.getElementById("sweep");
+  var L=44,R=548,T=14,B=262;
+  function x(e){return L+(Math.log10(e)+1)/3*(R-L)}
+  function y(a){return B-(a-40)/35*(B-T)}
+  [40,50,60,70].forEach(function(v){
+    el(svg,"line",{class:"axis",x1:L,x2:R,y1:y(v),y2:y(v)});
+    el(svg,"text",{x:L-8,y:y(v)+4,"text-anchor":"end"},v+"%");
+  });
+  [0.1,1,10,100].forEach(function(v){
+    el(svg,"line",{class:"axis",x1:x(v),x2:x(v),y1:B,y2:B+5});
+    el(svg,"text",{x:x(v),y:B+19,"text-anchor":v===100?"end":v===0.1?"start":"middle"},"ε="+v);
+  });
+  el(svg,"line",{class:"chance",x1:L,x2:R,y1:y(CHANCE),y2:y(CHANCE)});
+  el(svg,"text",{x:R,y:y(CHANCE)+15,"text-anchor":"end"},"chance 50%");
+  el(svg,"line",{class:"base",x1:L,x2:R,y1:y(BASE),y2:y(BASE)});
+  el(svg,"text",{class:"base-t",x:L+6,y:y(BASE)-7},"no privacy noise 68.4%");
+  var guide=el(svg,"line",{class:"guide",y1:T,y2:B});
+  el(svg,"polyline",{class:"curve",points:data.map(function(d){return x(d.e)+","+y(d.a)}).join(" ")});
+  var pts=data.map(function(d,i){
+    var c=el(svg,"circle",{class:"pt",cx:x(d.e),cy:y(d.a),r:5});
+    return c;
+  });
+  var input=document.getElementById("eps");
+  var rE=document.getElementById("r-e"),rA=document.getElementById("r-a"),rN=document.getElementById("r-n"),rS=document.getElementById("r-s");
+  function say(d){
+    if(d.e<=2) return "Close to a coin flip. The noise overwhelms what the model learns, so this privacy level gives no useful predictions on this task.";
+    if(d.e<=10) return "Partial recovery. The model has started to learn, but it is still well below the version trained without noise.";
+    return "Back to the no-noise baseline. The accuracy returns because the noise is small, and a budget this large gives weak formal privacy.";
+  }
+  function show(i){
+    var d=data[i];
+    pts.forEach(function(p,j){p.setAttribute("class",j===i?"pt on":"pt");p.setAttribute("r",j===i?7:5)});
+    guide.setAttribute("x1",x(d.e));guide.setAttribute("x2",x(d.e));
+    rE.textContent=d.e;
+    rA.textContent=(d.approx?"≈":"")+d.a.toFixed(1)+"%";
+    rN.textContent=d.n;
+    rS.textContent=say(d);
+    input.setAttribute("aria-valuetext","epsilon "+d.e+", accuracy "+d.a+" percent");
+  }
+  input.addEventListener("input",function(){show(+input.value)});
+  show(+input.value);
+  var tb=document.getElementById("sweep-table");
+  data.forEach(function(d){
+    var tr=document.createElement("tr");
+    [d.e,(d.approx?"≈":"")+d.a.toFixed(1)+"%",d.n].forEach(function(v){var td=document.createElement("td");td.textContent=v;tr.appendChild(td)});
+    tb.appendChild(tr);
+  });
 })();
 
-// reveal on scroll
+// Fig. 2: invoice fields by template. Source: invoice-reader-donut/data/processed/dount_all.json
 (function(){
-  var els=document.querySelectorAll(".reveal");
-  if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return;}
-  var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}})},{threshold:.08});
-  els.forEach(function(e){io.observe(e)});
+  var M={"fields": ["OTHER", "DATE", "NUMBER", "SELLER_ADDRESS", "TOTAL", "TITLE", "SELLER_NAME", "SUB_TOTAL", "BUYER", "DUE_DATE", "NOTE", "SELLER_EMAIL", "TOTAL_WORDS", "TAX", "PAYMENT_DETAILS", "CONDITIONS", "DISCOUNT", "SEND_TO", "BILL_TO", "GSTIN", "PO_NUMBER", "SELLER_SITE", "GSTIN_SELLER", "AMOUNT_DUE", "GSTIN_BUYER", "GST(18%)", "GST(9%)", "GST(1%)", "GST(20%)", "GST(12%)", "GST(5%)", "GST(7%)"], "coverage": [50, 49, 44, 41, 40, 37, 34, 34, 31, 29, 26, 22, 20, 19, 13, 12, 12, 9, 8, 7, 7, 7, 5, 4, 3, 3, 2, 1, 1, 1, 1, 1], "order": [1, 12, 50, 46, 4, 47, 3, 21, 34, 35, 36, 24, 16, 32, 5, 6, 31, 28, 44, 45, 7, 48, 8, 41, 49, 2, 40, 33, 17, 18, 43, 11, 39, 15, 14, 10, 19, 9, 23, 29, 38, 13, 26, 42, 37, 25, 20, 30, 27, 22], "bits": ["11011101111111101000111010000000", "11111111111011111000000000000000", "11011111011111111010000000000000", "11111111011001100010000000000000", "11011111011000001010000000000000", "11111110011000000000100000000000", "11101110011011000010100000000000", "11111110011011000100000000000000", "11111100001010000100000000000000", "11111100101010000101000000000000", "11110101101010000001000100000000", "11110111101100000000000000000000", "11111111100100000000000000000000", "11111011101100000000000000000000", "11111011101111000000100000000000", "11101111101001000000100000000000", "11111101100001000000000000000000", "11011101100001100000000000000000", "11111111000101100000000000000000", "11111110100100100000010000000000", "11101111110100000000010000100000", "11111011111110100000010000100000", "11111011110110110100011000000000", "11111011100110010000011000000000", "11111011100010000011000000000000", "11111111100000000001000000000001", "11111011110000100000000000000000", "11111111110000000000001011000000", "11111111110011000000001010000000", "11111111010001001100000100000000", "11111101010101001010010000000000", "11101101011101011000000000000000", "11110101111001011000000000000000", "11110101110100001000000000000000", "11111110110000011000000000000000", "11111010111100011000000000000000", "11110010111000000001000000000000", "11101010101110000001000000000000", "11101110101110000000000000000000", "11111101101111100000000001000000", "11111101011010110000000000000000", "11011110011010110000000000000000", "11110110010000010100000000000000", "11110110010100000010100000000000", "11010101110001000000100100000000", "11111011110100000000000001011110", "10111011000000000000000100000000", "11100101000010010100000000000000", "11100100000000000111000000000000", "11101000011101001100000000000000"]};
+  var svg=document.getElementById("heat");
+  var S=15,G=1,LX=124,TY=8,RX=52;
+  var W=LX+M.order.length*S+RX, H=TY+M.fields.length*S+24;
+  svg.setAttribute("viewBox","0 0 "+W+" "+H);
+  function bin(c){return c>=40?1:c>=25?2:c>=12?3:c>=5?4:c>=2?5:6}
+  M.fields.forEach(function(f,r){
+    var yy=TY+r*S;
+    el(svg,"text",{x:LX-8,y:yy+11,"text-anchor":"end"},f);
+    el(svg,"text",{x:LX+M.order.length*S+6,y:yy+11},M.coverage[r]);
+    M.order.forEach(function(t,c){
+      var on=M.bits[c][r]==="1";
+      var rect=el(svg,"rect",{x:LX+c*S,y:yy,width:S-G,height:S-G,class:on?"c"+bin(M.coverage[r]):"c0"});
+      rect.dataset.r=r; rect.dataset.c=c;
+    });
+  });
+  el(svg,"text",{x:LX,y:H-6},"50 templates, ordered by similarity");
+  el(svg,"text",{x:W,y:H-6,"text-anchor":"end"},"of 50");
+  var hl=el(svg,"rect",{class:"hl",width:S-G,height:S-G,visibility:"hidden"});
+  var read=document.getElementById("heat-read");
+  svg.addEventListener("pointermove",function(e){
+    var t=e.target;
+    if(t.dataset.r==null) return;
+    var r=+t.dataset.r,c=+t.dataset.c;
+    hl.setAttribute("x",t.getAttribute("x"));hl.setAttribute("y",t.getAttribute("y"));hl.setAttribute("visibility","visible");
+    read.textContent="Template "+M.order[c]+" · "+M.fields[r]+" · "+(M.bits[c][r]==="1"?"present":"absent")+" · field is in "+M.coverage[r]+" of 50 templates";
+  });
+  svg.addEventListener("pointerleave",function(){hl.setAttribute("visibility","hidden")});
+  var lg=document.getElementById("legend");
+  lg.innerHTML='<span>Field appears in</span>'+[["40–50",1],["25–39",2],["12–24",3],["5–11",4],["2–4",5],["1",6]].map(function(b){
+    return '<span><i style="background:var(--v'+b[1]+')"></i>'+b[0]+'</span>';
+  }).join("")+'<span>templates</span>';
 })();
 </script>
 </body>
